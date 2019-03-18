@@ -1,0 +1,21 @@
+.video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.padChange{
+    padding: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.padZero{
+    padding: 0px;
+    object-fit: cover;
+}
+
+.card{
+    height: 90%;
+}

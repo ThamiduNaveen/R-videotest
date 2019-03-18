@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Upload Video</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="!videoId">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Video URL:</ion-label>
+        <ion-input type="text" [(ngModel)]="newVideoUrl"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="center">
+      <ion-button (click)="getVideo(newVideoUrl)" size="small" shape="round" fill="outline" color="primary">Submit
+      </ion-button>
+    </div>
+  </div>
+
+  <ion-card *ngIf="videoId">
+    <img [src]="thumbNail" />
+    <ion-card-content>
+
+      <div>
+        <ion-textarea autofocus="true" value="description" [(ngModel)]="description"></ion-textarea>
+      </div>
+
+      <div class="center">
+        <ion-button color="primary" size="small" shape="round" (click)="uploadVideo()">Upload</ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

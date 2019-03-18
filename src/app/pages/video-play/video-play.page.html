@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Play Video</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="Refreshing($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-label *ngIf="!networkStatus">Check Your Internet Connection</ion-label>
+
+  <ion-card class="card" *ngIf="networkStatus">
+
+    <ion-card-content no-padding class="padChange" *ngIf="url">
+
+
+      <iframe name="iframe" class="video" [src]="url | youtube" frameborder="0"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+</ion-content>

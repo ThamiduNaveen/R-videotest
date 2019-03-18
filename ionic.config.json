@@ -1,5 +1,7 @@
 {
   "name": "ritigalaVideoTest",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
